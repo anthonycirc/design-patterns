@@ -1,0 +1,6 @@
+class Car:
+    ...
+
+
+class Truck:
+    ...
