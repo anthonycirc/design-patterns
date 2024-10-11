@@ -20,3 +20,8 @@ This repository contains examples of design patterns implemented in Python.
 - **Intent**: Separate the construction of a complex object from its representation so
   that
   the same construction process can create different representations.
+
+### 🔨 Prototype
+
+- **Intent**: Specify the kinds of objects to create using a prototypical instance, and
+  create new objects by copying this prototype.
