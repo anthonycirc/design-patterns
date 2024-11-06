@@ -1,7 +1,9 @@
+import logging
 from abc import ABC
-from typing import Self
 
 from creational.builder.vehicle import Car, Truck
+
+logging.basicConfig(level=logging.INFO, handlers=[logging.StreamHandler()])
 
 
 class VehicleBuilder(ABC):
@@ -36,28 +38,29 @@ class CarBuilder(VehicleBuilder):
 
     def build_engine(self) -> None:
         self._car.engine = "Car Engine"
-        print("Building car engine")
+        logging.info("Building car engine")
 
     def build_wheels(self) -> None:
         self._car.wheels = "Car Wheels"
-        print("Build car wheels")
+        logging.info("Build car wheels")
 
     def build_chassis(self) -> None:
         self._car.chassis = "Car Chassis"
-        print("Build car chassis")
+        logging.info("Build car chassis")
 
     def build_interior(self) -> None:
         self._car.interior = "Car Interior"
-        print("Build car interior")
+        logging.info("Build car interior")
 
     def build_seats(self) -> None:
         self._car.seats = "Car Seats"
-        print("Build car seats")
+        logging.info("Build car seats")
 
     def get_product(self) -> Car:
         product: Car = self._car
         self.reset()
         return product
+
 
 class TruckBuilder(VehicleBuilder):
     _truck: Truck | None = None
@@ -70,23 +73,23 @@ class TruckBuilder(VehicleBuilder):
 
     def build_engine(self) -> None:
         self._truck.engine = "Truck Engine"
-        print("Building truck engine")
+        logging.info("Building truck engine")
 
     def build_wheels(self) -> None:
         self._truck.wheels = "Truck Wheels"
-        print("Build truck wheels")
+        logging.info("Build truck wheels")
 
     def build_chassis(self) -> None:
         self._truck.chassis = "Truck Chassis"
-        print("Build truck chassis")
+        logging.info("Build truck chassis")
 
     def build_interior(self) -> None:
         self._truck.interior = "Truck Interior"
-        print("Build truck interior")
+        logging.info("Build truck interior")
 
     def build_seats(self) -> None:
         self._truck.seats = "Truck Seats"
-        print("Build truck seats")
+        logging.info("Build truck seats")
 
     def get_product(self) -> Truck:
         product: Truck = self._truck
