@@ -11,12 +11,11 @@ class Animal(ABC):
 
     @abstractmethod
     def speak(self) -> str:
-        raise NotImplementedError
+        ...
 
     @abstractmethod
     def eat(self) -> str:
-        raise NotImplementedError
-
+        ...
 
 class Cat(Animal):
     """
