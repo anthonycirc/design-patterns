@@ -12,8 +12,8 @@ def main():
     electric_factory: EngineFactory = ElectricEngineFactory()
 
     for factory in [gasoline_factory, electric_factory]:
-        factory.create_vehicle()
-        vehicles: list[Vehicle] = factory.get_vehicles()
+        factory.create_vehicles()
+        vehicles: list[Vehicle] = factory.vehicles
 
         for vehicle in vehicles:
             logging.info(

@@ -45,7 +45,7 @@ class Vehicle(ABC):
 
     @abstractmethod
     def license(self) -> bool:
-        raise NotImplementedError
+        ...
 
 
 class Car(Vehicle):
@@ -61,17 +61,19 @@ class Car(Vehicle):
         return True
 
 
-class Truck(Vehicle):
+class Truck(Car):
     """
     Class for Truck which inherits from Vehicle
     """
 
-    def __init__(self, engine: EngineEnum):
-        super().__init__()
-        self._engine = engine
+    ...
 
-    def license(self) -> bool:
-        return True
+
+class Bus(Car):
+    """
+    Class for Bus which inherits from Vehicle
+    """
+    ...
 
 
 class Scooter(Vehicle):
@@ -85,16 +87,3 @@ class Scooter(Vehicle):
 
     def license(self) -> bool:
         return False
-
-
-class Bus(Vehicle):
-    """
-    Class for Bus which inherits from Vehicle
-    """
-
-    def __init__(self, engine: EngineEnum):
-        super().__init__()
-        self._engine = engine
-
-    def license(self) -> bool:
-        return True

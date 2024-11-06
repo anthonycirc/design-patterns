@@ -9,7 +9,7 @@ class EngineFactory(ABC):
     def __init__(self):
         self._vehicles: list[Vehicle] = []
 
-    def create_vehicle(self) -> None:
+    def create_vehicles(self) -> None:
         self._vehicles = [
             self.create_car(),
             self.create_truck(),
@@ -17,7 +17,8 @@ class EngineFactory(ABC):
             self.create_bus()
         ]
 
-    def get_vehicles(self) -> list[Vehicle]:
+    @property
+    def vehicles(self) -> list[Vehicle]:
         return self._vehicles
 
     @abstractmethod
