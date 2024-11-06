@@ -14,17 +14,16 @@ class CarPrototype(ABC):
 
 
 class SportCar(CarPrototype):
-    def __init__(self, make: str | None, model: str | None, year: int | None):
-        super().__init__(make, model, year)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def clone(self) -> Self:
         return SportCar(self.make, self.model, self.year)
 
 
 class BerlinCar(CarPrototype):
-    def __init__(self, make: str | None, model: str | None, year: int | None,
-                 doors: int | None):
-        super().__init__(make, model, year)
+    def __init__(self, *args, doors: int | None, **kwargs):
+        super().__init__(*args, **kwargs)
         self.doors = doors
 
     @property
@@ -32,4 +31,4 @@ class BerlinCar(CarPrototype):
         return self.__dict__
 
     def clone(self) -> Self:
-        return BerlinCar(self.make, self.model, self.year, self.doors)
+        return BerlinCar(self.make, self.model, self.year, doors=self.doors)
