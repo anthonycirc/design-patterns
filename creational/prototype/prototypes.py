@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 from typing import Self
 
 
@@ -9,6 +9,7 @@ class CarPrototype(ABC):
         self.model = model
         self.year = year
 
+    @abstractmethod
     def clone(self) -> Self:
         ...
 
