@@ -6,7 +6,7 @@ class Database:
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance or not isinstance(cls._instance, cls):
-            cls._instance = super(Database, cls).__new__(cls)
+            cls._instance = super().__new__(cls)
         return cls._instance
 
     def __init__(self, name: str | None, port: int | None):
