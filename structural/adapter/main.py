@@ -1,5 +1,3 @@
-from sys import prefix
-
 from structural.adapter.adapter import ConvertAdapter, JSONConverter, ListConverter, \
     DictConverter
 
@@ -12,9 +10,19 @@ class TextObject:
         return self.content
 
     def get_content_with_prefix(self, prefix: str) -> str:
+        """
+        Get content with prefix
+        :param prefix: str
+        :return: str
+        """
         return f"{prefix} {self.content}"
 
     def get_content_with_suffix(self, suffix: str) -> str:
+        """
+        Get content with suffix
+        :param suffix: str
+        :return: str
+        """
         return f"{self.content} {suffix}"
 
 
