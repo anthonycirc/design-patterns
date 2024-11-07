@@ -1,11 +1,11 @@
 from structural.bridge.implementation import ClassicCar, Car, Engine, SportCar
-from structural.bridge.interface import DriveSportCar, DriveClassicCar
+from structural.bridge.interface import AutoDriveSportCar, AutoDriveClassicCar
 
 
 def main() -> None:
     # Classic car example
     classic_car: Car = ClassicCar(engine=Engine.DIESEL)
-    drive_classic_car: DriveClassicCar = DriveClassicCar(classic_car)
+    drive_classic_car: AutoDriveClassicCar = AutoDriveClassicCar(classic_car)
 
     drive_classic_car.toggle_start()
     drive_classic_car.get_engine_infos()
@@ -14,7 +14,7 @@ def main() -> None:
 
     # Sport car example
     sport_car: Car = SportCar()
-    drive_sport_car: DriveSportCar = DriveSportCar(sport_car)
+    drive_sport_car: AutoDriveSportCar = AutoDriveSportCar(sport_car)
 
     drive_sport_car.toggle_start()
     drive_sport_car.get_engine_infos()

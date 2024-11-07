@@ -83,3 +83,27 @@ class SportCar(Car):
     def disabled_nitro(self) -> None:
         self._nitro = False
         print("Nitro disabled")
+
+    @property
+    def sport_drive(self) -> bool:
+        return self._sport_drive
+
+    @sport_drive.setter
+    def sport_drive(self, value: bool) -> None:
+        self._sport_drive = value
+
+    @property
+    def turbo(self) -> bool:
+        return self._turbo
+
+    @turbo.setter
+    def turbo(self, value: bool) -> None:
+        self._turbo = value
+
+    @property
+    def nitro(self) -> bool:
+        return self._nitro
+
+    @nitro.setter
+    def nitro(self, value: bool) -> None:
+        self._nitro = value
