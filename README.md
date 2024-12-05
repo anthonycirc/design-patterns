@@ -49,3 +49,10 @@ This repository contains examples of design patterns implemented in Python.
 - **Intent**: Compose objects into tree structures to represent part-whole hierarchies.
   Composite allows clients to treat individual objects and compositions of objects
   uniformly.
+
+### 🪆Decorator
+
+- **Intent**: Attach additional responsibilities to an object dynamically. Decorator
+  provides a flexible alternative to subclassing for extending functionality.
+
+
